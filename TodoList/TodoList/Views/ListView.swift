@@ -9,18 +9,19 @@ import SwiftUI
 
 struct ListView: View {
     
-    @State var items: [ItemModel] = [
-        ItemModel(title: "This is the first title!", isComplete: false),
-        ItemModel(title: "This is the second!", isComplete: true),
-        ItemModel(title: "Third!", isComplete: false),
-    ]
+    @EnvironmentObject var listViewModel: ListViewModel
     
     var body: some View {
         List {
-            ForEach(items){ item in                ListRowView(item: item)
+            ForEach(listViewModel.items){ item in
+                ListRowView(item: item)
+                //Change the circle styles when click item
+                    .onTapGesture {
+                        withAnimation(.linear)
+                    }
             }
-            .onDelete(perform: deleteItem)
-            .onMove(perform: moveItem)
+            .onDelete(perform: listViewModel.deleteItem)
+            .onMove(perform: listViewModel.moveItem)
         }
         .navigationTitle("Todo List 📝")
         .navigationBarItems(
@@ -29,13 +30,6 @@ struct ListView: View {
                 NavigationLink("Add",destination: AddView())
         )
     }
-    func deleteItem(indexSet: IndexSet) {
-        items.remove(atOffsets: indexSet)
-    }
-    func moveItem(from: IndexSet, to: Int) {
-        items.move(fromOffsets: from, toOffset: to)
-    }
-    
 }
 
 struct ListView_Previews: PreviewProvider {
@@ -43,6 +37,7 @@ struct ListView_Previews: PreviewProvider {
         NavigationView {
             ListView()
         }
+        .environmentObject(ListViewModel())
     }
 }
 
