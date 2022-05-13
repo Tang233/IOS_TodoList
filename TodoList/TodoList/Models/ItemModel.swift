@@ -8,7 +8,7 @@
 import Foundation
 
 //make each item unique by creating random string id number
-struct itemModel: Identifiable {
+struct ItemModel: Identifiable {
     let id: String = UUID().uuidString
     let title: String
     let isComplete: Bool

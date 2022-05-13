@@ -9,17 +9,18 @@ import SwiftUI
 
 struct ListView: View {
     
-    @State var items: [itemModel] = [
-        itemModel(title: "This is the first title!", isComplete: false),
-        itemModel(title: "This is the second!", isComplete: true),
-        itemModel(title: "Third!", isComplete: false),
+    @State var items: [ItemModel] = [
+        ItemModel(title: "This is the first title!", isComplete: false),
+        ItemModel(title: "This is the second!", isComplete: true),
+        ItemModel(title: "Third!", isComplete: false),
     ]
     
     var body: some View {
         List {
-            ForEach(items){ item in
-                ListRowView(item: item)
+            ForEach(items){ item in                ListRowView(item: item)
             }
+            .onDelete(perform: deleteItem)
+            .onMove(perform: moveItem)
         }
         .navigationTitle("Todo List 📝")
         .navigationBarItems(
@@ -28,6 +29,13 @@ struct ListView: View {
                 NavigationLink("Add",destination: AddView())
         )
     }
+    func deleteItem(indexSet: IndexSet) {
+        items.remove(atOffsets: indexSet)
+    }
+    func moveItem(from: IndexSet, to: Int) {
+        items.move(fromOffsets: from, toOffset: to)
+    }
+    
 }
 
 struct ListView_Previews: PreviewProvider {

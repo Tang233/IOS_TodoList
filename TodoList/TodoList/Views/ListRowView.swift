@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ListRowView: View {
 
-    let item: itemModel
+    let item: ItemModel
     
     var body: some View {
         HStack {
@@ -25,8 +25,8 @@ struct ListRowView: View {
 }
 
 struct ListRowView_Previews: PreviewProvider {
-    static var item1 = itemModel(title: "Fist Item!", isComplete: false)
-    static var item2 = itemModel(title: "Second Item!", isComplete: true)
+    static var item1 = ItemModel(title: "Fist Item!", isComplete: false)
+    static var item2 = ItemModel(title: "Second Item!", isComplete: true)
     static var previews: some View {
         Group {
             ListRowView(item:item1)
