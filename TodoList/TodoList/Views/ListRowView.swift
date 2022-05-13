@@ -9,19 +9,29 @@ import SwiftUI
 
 struct ListRowView: View {
 
-    let title: String
+    let item: itemModel
     
     var body: some View {
         HStack {
-            Image(systemName:"checkmark.circle")
-            Text(title)
+            /*if the item is completed, show the green check mark circle, if not,shows the red circle*/
+            Image(systemName: item.isComplete ? "checkmark.circle" : "circle")
+                .foregroundColor(item.isComplete ? .green : .red)
+            Text(item.title)
             Spacer()
         }
+        .font(.title2)
+        .padding(.vertical, 8)
     }
 }
 
 struct ListRowView_Previews: PreviewProvider {
+    static var item1 = itemModel(title: "Fist Item!", isComplete: false)
+    static var item2 = itemModel(title: "Second Item!", isComplete: true)
     static var previews: some View {
-        ListRowView(title:"This is the first item")
+        Group {
+            ListRowView(item:item1)
+            ListRowView(item: item2)
+        }
+        .previewLayout(.sizeThatFits)
     }
 }
