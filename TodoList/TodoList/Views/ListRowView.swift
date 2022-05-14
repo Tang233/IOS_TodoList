@@ -14,8 +14,8 @@ struct ListRowView: View {
     var body: some View {
         HStack {
             /*if the item is completed, show the green check mark circle, if not,shows the red circle*/
-            Image(systemName: item.isComplete ? "checkmark.circle" : "circle")
-                .foregroundColor(item.isComplete ? .green : .red)
+            Image(systemName: item.isCompleted ? "checkmark.circle" : "circle")
+                .foregroundColor(item.isCompleted ? .green : .red)
             Text(item.title)
             Spacer()
         }
@@ -25,8 +25,8 @@ struct ListRowView: View {
 }
 
 struct ListRowView_Previews: PreviewProvider {
-    static var item1 = ItemModel(title: "Fist Item!", isComplete: false)
-    static var item2 = ItemModel(title: "Second Item!", isComplete: true)
+    static var item1 = ItemModel(title: "Fist Item!", isCompleted: false)
+    static var item2 = ItemModel(title: "Second Item!", isCompleted: true)
     static var previews: some View {
         Group {
             ListRowView(item:item1)

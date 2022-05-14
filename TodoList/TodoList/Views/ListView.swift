@@ -17,7 +17,9 @@ struct ListView: View {
                 ListRowView(item: item)
                 //Change the circle styles when click item
                     .onTapGesture {
-                        withAnimation(.linear)
+                        withAnimation(.linear) {
+                            listViewModel.updateItem(item: item)
+                        }
                     }
             }
             .onDelete(perform: listViewModel.deleteItem)
