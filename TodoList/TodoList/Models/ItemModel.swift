@@ -9,7 +9,8 @@ import Foundation
 
 //Imutable Struct
 //make each item unique by creating random string id number
-struct ItemModel: Identifiable {
+//use codable
+struct ItemModel: Identifiable, Codable {
     let id: String
     let title: String
     let isCompleted: Bool
