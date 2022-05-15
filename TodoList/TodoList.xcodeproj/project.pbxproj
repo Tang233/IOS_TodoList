@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D226F915282EAB9F000C06DC /* ListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D226F914282EAB9F000C06DC /* ListRowView.swift */; };
 		D226F917282EB213000C06DC /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D226F916282EB213000C06DC /* AddView.swift */; };
+		D2271474283129E50038F782 /* NoItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2271473283129E50038F782 /* NoItemsView.swift */; };
 		D26190D9282E77A200CD736E /* TodoListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26190D8282E77A200CD736E /* TodoListApp.swift */; };
 		D26190DD282E77A300CD736E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D26190DC282E77A300CD736E /* Assets.xcassets */; };
 		D26190E0282E77A300CD736E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D26190DF282E77A300CD736E /* Preview Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		D226F914282EAB9F000C06DC /* ListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowView.swift; sourceTree = "<group>"; };
 		D226F916282EB213000C06DC /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		D2271473283129E50038F782 /* NoItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoItemsView.swift; sourceTree = "<group>"; };
 		D26190D5282E77A200CD736E /* TodoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D26190D8282E77A200CD736E /* TodoListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListApp.swift; sourceTree = "<group>"; };
 		D26190DC282E77A300CD736E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				D2BEC094282E9693008E097F /* ListView.swift */,
 				D226F914282EAB9F000C06DC /* ListRowView.swift */,
 				D226F916282EB213000C06DC /* AddView.swift */,
+				D2271473283129E50038F782 /* NoItemsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 				D28BB2BD282EFA6D006D2062 /* ListViewModel.swift in Sources */,
 				D2BEC095282E9693008E097F /* ListView.swift in Sources */,
 				D26190D9282E77A200CD736E /* TodoListApp.swift in Sources */,
+				D2271474283129E50038F782 /* NoItemsView.swift in Sources */,
 				D226F915282EAB9F000C06DC /* ListRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
