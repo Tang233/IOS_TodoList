@@ -1,10 +1,3 @@
-//
-//  ListView.swift
-//  TodoList
-//
-//  Created by Jin Tang on 13/5/2022.
-//
-
 import SwiftUI
 
 struct ListView: View {
@@ -12,15 +5,20 @@ struct ListView: View {
     @EnvironmentObject var listViewModel: ListViewModel
     
     var body: some View {
+        //The ZStack assigns each successive child view a higher z-axis
+        //value than the one before it, meaning later children appear “on top” of earlier ones.
         ZStack {
+            //if the list have no items, shows the NoItemsView
             if( listViewModel.items.isEmpty ) {
                NoItemsView()
+                //Easing animation starts slow and speeds up over time + fade in and fade out
                     .transition(AnyTransition.opacity.animation(.easeIn))
             } else {
+                //list all the items if there is any items
                 List {
                     ForEach(listViewModel.items){ item in
                         ListRowView(item: item)
-                        //Change the circle styles when click item
+                        //Change the (circle styles)item completion status when click item
                             .onTapGesture {
                                 withAnimation(.linear) {
                                     listViewModel.updateItem(item: item)

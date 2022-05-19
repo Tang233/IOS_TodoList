@@ -12,6 +12,7 @@ struct ListRowView: View {
     let item: ItemModel
     
     var body: some View {
+        //A view that arranges its children in a horizontal line.
         HStack {
             /*if the item is completed, show the green check mark circle, if not,shows the red circle*/
             Image(systemName: item.isCompleted ? "checkmark.circle" : "circle")
