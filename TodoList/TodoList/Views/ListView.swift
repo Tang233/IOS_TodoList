@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ListView: View {
-    
+    //Create environment object to share data between views in this environment
     @EnvironmentObject var listViewModel: ListViewModel
     
     var body: some View {
@@ -20,6 +20,7 @@ struct ListView: View {
                         ListRowView(item: item)
                         //Change the (circle styles)item completion status when click item
                             .onTapGesture {
+                                //The animation transitions evenly from start to finish over time
                                 withAnimation(.linear) {
                                     listViewModel.updateItem(item: item)
                                 }

@@ -1,10 +1,3 @@
-//
-//  ListRowView.swift
-//  TodoList
-//
-//  Created by Jin Tang on 14/5/2022.
-//
-
 import SwiftUI
 
 struct ListRowView: View {

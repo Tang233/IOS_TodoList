@@ -1,15 +1,9 @@
-//
-//  NoItemsView.swift
-//  TodoList
-//
-//  Created by Jin Tang on 15/5/2022.
-//
-
 import SwiftUI
 
 struct NoItemsView: View {
     
     @State var animate: Bool = false
+    //Set the secondary accent color to the maroon color
     let secondaryAccentColor = Color("SecondaryAccentColor")
     
     var body: some View {
@@ -36,6 +30,9 @@ struct NoItemsView: View {
                             radius: animate ? 30 : 10,
                             x: 0.0,
                             y: animate ? 50 : 30)
+                //Scales this view’s rendered output by the given amount
+                //in both the horizontal and vertical directions,
+                //relative to an anchor point.
                     .scaleEffect(animate ? 1.1 : 1.0)
                     .offset(y: animate ? -7 : 0)
             }
@@ -48,8 +45,8 @@ struct NoItemsView: View {
     }
     
     func addAnimation() {
-        //make sure the animate is false
         guard !animate else { return }
+        //Set the timer to execute the animation
         DispatchQueue.main.asyncAfter(deadline: .now()+1.5 ) {
             withAnimation(
                 Animation
