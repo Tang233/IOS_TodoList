@@ -3,6 +3,7 @@ import SwiftUI
 @main
 struct TodoListApp: App {
     
+    //Define property wrapper type that initiates the observable object
     @StateObject var listViewModel: ListViewModel = ListViewModel()
     
     var body: some Scene {
